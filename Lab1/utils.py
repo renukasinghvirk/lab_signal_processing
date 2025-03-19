@@ -271,7 +271,6 @@ class ParticleFilterInterface:
           # Must be valid probability distribution
           assert np.abs(self.weights.sum() - 1.0) < 1e-6, 'Weight must sum to 1.0'
     
-
 _tracker_ctor = {
     'mil': cv2.legacy.TrackerMIL_create,
     'kcf': cv2.legacy.TrackerKCF_create,
@@ -281,6 +280,7 @@ _tracker_ctor = {
     'goturn': cv2.TrackerGOTURN_create
 }
 
+    
 def create_face_tracker(name='KCF'):
     """
     Create an instance of a face tracker from a given `name`. The list of available tracker is :
