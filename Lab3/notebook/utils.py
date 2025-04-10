@@ -272,12 +272,14 @@ class ParticleFilterInterface:
           assert np.abs(self.weights.sum() - 1.0) < 1e-6, 'Weight must sum to 1.0'
     
 
-_tracker_ctor = {'mil': cv2.TrackerMIL_create,
-                 'kcf': cv2.TrackerKCF_create,
-                 'tld': cv2.TrackerTLD_create,
-                 'medianflow': cv2.TrackerMedianFlow_create,
-                 'mosse': cv2.TrackerMOSSE_create,
-                 'goturn': cv2.TrackerGOTURN_create}
+_tracker_ctor = {
+    'mil': cv2.legacy.TrackerMIL_create,
+    'kcf': cv2.legacy.TrackerKCF_create,
+    'tld': cv2.legacy.TrackerTLD_create,
+    'medianflow': cv2.legacy.TrackerMedianFlow_create,
+    'mosse': cv2.legacy.TrackerMOSSE_create,
+    'goturn': cv2.TrackerGOTURN_create
+}
     
 def create_face_tracker(name='KCF'):
     """
